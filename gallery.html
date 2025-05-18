@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gallery - My Website</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+  <style>
+    body {
+      display: flex;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+    }
+    .sidebar {
+      width: 220px;
+      height: 100vh;
+      position: fixed;
+      background-color: #f0f0f0;
+      padding-top: 20px;
+      box-sizing: border-box;
+    }
+    .sidebar h3 {
+      color: #1a237e;
+      text-align: left;
+      margin-left: 20px;
+      margin-bottom: 25px;
+      font-weight: bold;
+      font-size: 22px;
+    }
+    .sidebar a {
+      display: block;
+      padding: 12px 20px;
+      text-decoration: none;
+      color: #1a237e;
+      font-size: 16px;
+      border-left: 4px solid transparent;
+      transition: background-color 0.2s ease, border-left-color 0.2s ease;
+    }
+    .sidebar a:hover,
+    .sidebar a.active {
+      background-color: #d1d9ff;
+      border-left-color: #1a237e;
+      font-weight: 600;
+    }
+    .content {
+      margin-left: 220px;
+      padding: 30px 40px;
+      width: 100%;
+      max-width: 1000px;
+      color: #222;
+      background-color: white;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
+    h2 {
+      color: #1a237e;
+      margin-bottom: 20px;
+    }
+    .slider {
+      width: 100%;
+      margin: 0 auto;
+    }
+    .slider img {
+      width: 100%;
+      height: 100%;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+    .slick-prev:before,
+    .slick-next:before {
+      color: #1a237e;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h3>Menu</h3>
+    <a href="Home.html">Home</a>
+    <a href="about2.html">About</a>
+    <a href="profile1.html">Profile</a>
+    <a href="achievements.html">Achievements</a>
+    <a href="interest.html">Interests</a>
+    <a href="calendar.html">Calendar</a>
+    <a href="contac.html">Contact</a>
+    <a href="feedback.html">Feedback</a>
+    <a href="map1.html">Map</a>
+    <a href="gallery.html" class="active">Gallery</a>
+  </div>
+
+  <div class="content">
+    <h2>Image Gallery</h2>
+    <p>Here are some pictures that represent my journey and interests:</p>
+    <div class="slider">
+      <div><img src="img/folio.jpeg" alt="Gallery Image 1"></div>
+      <div><img src="img/port.jpeg" alt="Gallery Image 2"></div>
+      <div><img src="img/site.jpeg" alt="Gallery Image 3"></div>
+      <div><img src="img/web.jpeg" alt="Gallery Image 4"></div>
+    </div>
+  </div>
+
+  <!-- Slick JS and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('.slider').slick({
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        adaptiveHeight: true
+      });
+    });
+  </script>
+</body>
+</html>
