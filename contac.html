@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact - My Website</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      display: flex;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+    }
+    .sidebar {
+      width: 220px;
+      height: 100vh;
+      position: fixed;
+      background-color: #f0f0f0;
+      padding-top: 20px;
+      box-sizing: border-box;
+    }
+    .sidebar h3 {
+      color: #1a237e;
+      text-align: left;
+      margin-left: 20px;
+      margin-bottom: 25px;
+      font-weight: bold;
+      font-size: 22px;
+    }
+    .sidebar a {
+      display: block;
+      padding: 12px 20px;
+      text-decoration: none;
+      color: #1a237e;
+      font-size: 16px;
+      border-left: 4px solid transparent;
+      transition: background-color 0.2s ease, border-left-color 0.2s ease;
+    }
+    .sidebar a:hover,
+    .sidebar a.active {
+      background-color: #d1d9ff;
+      border-left-color: #1a237e;
+      font-weight: 600;
+    }
+    .content {
+      margin-left: 220px;
+      padding: 30px 40px;
+      width: 100%;
+      max-width: 900px;
+      color: #222;
+      background-color: white;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
+    h2 {
+      color: #1a237e;
+      margin-bottom: 20px;
+    }
+    form {
+      max-width: 500px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #1a237e;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #000d5c;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h3>Menu</h3>
+    <a href="Home.html">Home</a>
+    <a href="about2.html">About</a>
+    <a href="profile1.html">Profile</a>
+    <a href="achievements.html">Achievements</a>
+    <a href="interest.html">Interests</a>
+    <a href="calendar.html">Calendar</a>
+    <a href="contac.html" class="active">Contact</a>
+    <a href="feedback.html">Feedback</a>
+    <a href="map1.html">Map</a>
+    <a href="gallery.html">Gallery</a>
+  </div>
+
+  <div class="content">
+    <h2>Contact Me</h2>
+    <form onsubmit="return validateForm()">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Your Email" required />
+      <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+  <script>
+    function validateForm() {
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if (!name || !email || !message) {
+        alert("Please fill in all fields.");
+        return false;
+      }
+      alert("Thank you! Your message has been sent.");
+      return false; // Prevent real submission for now
+    }
+  </script>
+</body>
+</html>
